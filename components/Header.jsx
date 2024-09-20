@@ -27,9 +27,22 @@ const Header = () => {
   return (
     <div className="py-5 px-5 md:px-12 lg:px-28 ">
       <div className="flex justify-between items-center">
-        <div className="flex items-center gap-8">
-          <div class="circle">
-            <h1>G</h1>
+        <div className="flex items-center gap-6">
+          <div>
+            <Image
+              src={assets.logo}
+              width={80}
+              height={80}
+              className="dark:hidden"
+              alt="logo"
+            />
+            <Image
+              src={assets.logo_dark}
+              width={80}
+              height={80}
+              className="dark:block hidden"
+              alt="logo_dark"
+            />
           </div>
           <h1 className="text-5xl tracking-tighter text-[#EE5626] font-semibold">
             G BLOG
