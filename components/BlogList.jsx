@@ -20,11 +20,11 @@ const BlogList = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-30%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
-      <div className="flex justify-center gap-6 my-10">
+    <section ref={targetRef} className="relative h-[200vh]">
+      <div className="flex justify-center gap-6 ">
         <button
           onClick={() => setMenu("All")}
           className={
@@ -64,8 +64,8 @@ const BlogList = () => {
           Life style
         </button>
       </div>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4">
+      <div className="sticky top-0 flex h-[70vh] items-center ">
+        <motion.div style={{ x }} className="flex">
           {blogs
             .filter((item) => (menu === "All" ? true : item.category === menu))
             .map((item, index) => {

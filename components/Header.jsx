@@ -28,25 +28,26 @@ const Header = () => {
     <div className="py-5 px-5 md:px-12 lg:px-28 ">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-6">
-          <div>
-            <Image
-              src={assets.logo}
-              width={80}
-              height={80}
-              className="dark:hidden"
-              alt="logo"
-            />
-            <Image
-              src={assets.logo_dark}
-              width={80}
-              height={80}
-              className="dark:block hidden"
-              alt="logo_dark"
-            />
-          </div>
+          <Image
+            src={assets.logo}
+            width={80}
+            height={80}
+            className="dark:hidden"
+            alt="logo"
+          />
+          <Image
+            src={assets.logo_dark}
+            width={80}
+            height={80}
+            className="dark:block hidden"
+            alt="logo_dark"
+          />
           <h1 className="text-5xl tracking-tighter text-[#EE5626] font-semibold">
             G BLOG
           </h1>
+        </div>
+        <div>
+          <h1 className="text-3xl font-medium">Latest Updates</h1>
         </div>
         <div className="flex items-center gap-12">
           {/* <form
@@ -72,9 +73,6 @@ const Header = () => {
           <ModeToggle />
           {/* </form> */}
         </div>
-      </div>
-      <div className="text-center -my-4">
-        <h1 className="text-3xl sm:text-5xl font-medium">Latest Updates</h1>
       </div>
     </div>
   );
