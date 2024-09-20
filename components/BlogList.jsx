@@ -1,9 +1,10 @@
-import { blog_data } from "@/assets/assets";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BlogItem from "./BlogItem";
 import axios from "axios";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const BlogList = () => {
+  const targetRef = useRef(null);
   const [menu, setMenu] = useState("All");
   const [blogs, setBlogs] = useState([]);
 
@@ -15,8 +16,14 @@ const BlogList = () => {
     fetchBlogs();
   }, []);
 
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+
   return (
-    <div>
+    <section ref={targetRef} className="relative h-[300vh]">
       <div className="flex justify-center gap-6 my-10">
         <button
           onClick={() => setMenu("All")}
@@ -57,11 +64,8 @@ const BlogList = () => {
           Life style
         </button>
       </div>
-      <div>
-        <div
-          className="flex flex-wrap justify-around gap-1 gap-y-10
-         mb-16 xl:mx-24"
-        >
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <motion.div style={{ x }} className="flex gap-4">
           {blogs
             .filter((item) => (menu === "All" ? true : item.category === menu))
             .map((item, index) => {
@@ -76,9 +80,9 @@ const BlogList = () => {
                 />
               );
             })}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
