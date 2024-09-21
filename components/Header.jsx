@@ -25,9 +25,9 @@ const Header = () => {
   };
 
   return (
-    <div className="py-5 px-5 md:px-12 lg:px-28 ">
+    <div className=" px-5 md:px-12 lg:px-28">
       <div className="flex justify-between items-center">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 ">
           <Image
             src={assets.logo}
             width={80}

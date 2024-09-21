@@ -24,7 +24,7 @@ const BlogList = () => {
 
   return (
     <section ref={targetRef} className="relative h-[150vh]">
-      <div className="flex justify-center gap-6 pb-2">
+      <div className="flex justify-center gap-6">
         <button
           onClick={() => setMenu("All")}
           className={
@@ -64,8 +64,8 @@ const BlogList = () => {
           Life style
         </button>
       </div>
-      <div className="sticky top-20 h-[100vh] items-center ">
-        <motion.div style={{ x }} className="flex">
+      <div className="sticky top-20 h-[80vh]">
+        <motion.div style={{ x }} className=" flex">
           {blogs
             .filter((item) => (menu === "All" ? true : item.category === menu))
             .map((item, index) => {
