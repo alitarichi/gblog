@@ -34,10 +34,10 @@ const Page = () => {
         className="relative h-[80vh] max-w-[850px] overflow-x-auto 
       mt-4 border border-gray-500 scrollbar-hide"
       >
-        <table className="w-full text-sm text-gray-500">
+        <table className="w-full text-sm ">
           <thead
-            className="text-sm text-gray-700 text-left uppercase 
-          bg-gray-50"
+            className="text-sm text-left uppercase 
+          bg-gray-50 dark:bg-gray-900"
           >
             <tr>
               <th scope="col" className="hidden sm:block px-6 py-3">
