@@ -8,12 +8,10 @@ const BlogItem = ({ title, description, category, image, id }) => {
       <Link href={`/blogs/${id}`}>
         <Image src={image} alt="blog" width={400} height={400} />
       </Link>
-      <p className="ml-2 inline-block bg-black text-white text-sm">
-        {category}
-      </p>
+      <p className="ml-2 inline-block bg-black text-sm">{category}</p>
 
-      <h5 className="ml-4 text-lg p-2 font-medium  text-gray-900">{title}</h5>
-      <p className="ml-4 text-sm tracking-tighter text-gray-700">
+      <h5 className="ml-4 text-lg p-2 font-medium  ">{title}</h5>
+      <p className="ml-4 text-sm tracking-tighter">
         {description.slice(0, 80)}
       </p>
     </div>

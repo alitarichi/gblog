@@ -68,10 +68,13 @@ const BlogList = () => {
       </div>
       <div className="relative top-10 h-[50vh]">
         <motion.div
-          className="absolute right-0 top-1/2 m-20 transform -translate-y-1/2 pr-2 "
+          className="absolute right-0 top-[110px] h-full w-[250px]"
           style={{ opacity }}
         >
-          <button className="bg-black text-white py-2 px-4 rounded-sm">
+          <button
+            className="bg-[#F9F4EC] hover:bg-[#F8E3D3]
+          opacity-50 h-full w-full text-black py-2 px-4"
+          >
             Next Page
           </button>
         </motion.div>
