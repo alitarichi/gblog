@@ -20,11 +20,13 @@ const BlogList = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-70%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-15%"]);
+
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section ref={targetRef} className="relative h-[150vh]">
-      <div className="flex justify-center gap-6">
+    <section ref={targetRef} className="relative top-20 h-[110vh]">
+      <div className="flex  justify-center gap-6">
         <button
           onClick={() => setMenu("All")}
           className={
@@ -64,9 +66,35 @@ const BlogList = () => {
           Life style
         </button>
       </div>
-      <div className="sticky top-20 h-[80vh]">
+      <div className="relative top-10 h-[50vh]">
+        <motion.div
+          className="absolute right-0 top-1/2 m-20 transform -translate-y-1/2 pr-2 "
+          style={{ opacity }}
+        >
+          <button className="bg-black text-white py-2 px-4 rounded-sm">
+            Next Page
+          </button>
+        </motion.div>
         <motion.div style={{ x }} className=" flex">
           {blogs
+            .slice(0, 8)
+            .filter((item) => (menu === "All" ? true : item.category === menu))
+            .map((item, index) => {
+              return (
+                <BlogItem
+                  key={index}
+                  id={item._id}
+                  image={item.image}
+                  title={item.title}
+                  description={item.description}
+                  category={item.category}
+                />
+              );
+            })}
+        </motion.div>
+        <motion.div style={{ x }} className=" flex">
+          {blogs
+            .slice(8, 16)
             .filter((item) => (menu === "All" ? true : item.category === menu))
             .map((item, index) => {
               return (
