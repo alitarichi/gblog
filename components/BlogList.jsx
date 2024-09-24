@@ -66,9 +66,7 @@ const BlogList = () => {
       </div>
       <div className="relative top-10 h-[50vh]">
         <div className="absolute right-0 top-[110px] h-full w-[250px]">
-          <button className="h-full w-full  py-2 px-4 border-4">
-            Next Page
-          </button>
+          <button className="h-full w-full  py-2 px-4 ">Next Page</button>
         </div>
         <motion.div style={{ x }} className=" flex">
           {blogs
