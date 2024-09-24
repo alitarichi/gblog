@@ -22,8 +22,6 @@ const BlogList = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-15%"]);
 
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
   return (
     <section ref={targetRef} className="relative top-20 h-[110vh]">
       <div className="flex  justify-center gap-6">
@@ -67,17 +65,11 @@ const BlogList = () => {
         </button>
       </div>
       <div className="relative top-10 h-[50vh]">
-        <motion.div
-          className="absolute right-0 top-[110px] h-full w-[250px]"
-          style={{ opacity }}
-        >
-          <button
-            className="bg-[#F9F4EC] hover:bg-[#F8E3D3]
-          opacity-50 h-full w-full text-black py-2 px-4"
-          >
+        <div className="absolute right-0 top-[110px] h-full w-[250px]">
+          <button className="h-full w-full  py-2 px-4 border-4">
             Next Page
           </button>
-        </motion.div>
+        </div>
         <motion.div style={{ x }} className=" flex">
           {blogs
             .slice(0, 8)
